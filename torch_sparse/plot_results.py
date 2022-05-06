@@ -1,3 +1,12 @@
+"""
+Author: Nicolas Tirel
+Organization: GreenAI UPPA
+Date: 05/09/2022
+Description: This code is used to plot the results after running gpu_torch.py
+The dense_time and sparse_time are copied from the results on the terminal from the previous experiments 
+"""
+
+
 from AIPowerMeter.deep_learning_power_measure.power_measure import experiment, parsers
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -26,25 +35,6 @@ for i,size in enumerate(sizes):
 data = {"sizes" : sizes, "dense" : dense, "dense_time" : dense_time, "sparsee" : sparse, "sparse_time" : sparse_time, "fixed" : fixed}
 df_results = pd.DataFrame(data)
 print(df_results)
-
-def print_results(sizes = [2**i for i in range(2,13)]):
-    for i,size in enumerate(sizes):
-        filename = f"input_{size}"
-        
-        print(f"Power Consumption from dense matrices multiplication of size {size}")
-        driver = parsers.JsonParser(f"logs/dense_varying/{size}")
-        exp_result = experiment.ExpResults(driver)
-        exp_result.print()
-
-        print(f"Power Consumption from sparse matrices multiplication of size {size}")
-        driver = parsers.JsonParser(f"logs/sparse_varying/{size}")
-        exp_result = experiment.ExpResults(driver)
-        exp_result.print()
-
-        print(f"Power Consumption from sparse matrices multiplication of size {size}")
-        driver = parsers.JsonParser(f"logs/sparse_fixed/{size}")
-        exp_result = experiment.ExpResults(driver)
-        exp_result.print()
   
 #define colors to use
 col11 = 'lightcoral'

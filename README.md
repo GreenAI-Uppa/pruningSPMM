@@ -2,7 +2,7 @@
 
 ## Improving the computation performances using sparse matrix multiplications
 
-This repository contains all you need to repeat the experiments in the article : [ADD LINK WHEN PUBLISHED]
+This repository contains all you need to repeat the experiments in the article : https://medium.com/@yanis.chaigneau/pruning-in-neural-networks-541af4f9a899
 
 It is separated in three parts :
 

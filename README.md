@@ -16,7 +16,7 @@ in the same repository as pruningSPMM.
 
 Then you can install the requirements.txt with pip in a virtual env :
 
-`pip -r install requirements.txt`
+`pip install -r requirements.txt`
 
 and then 
 
